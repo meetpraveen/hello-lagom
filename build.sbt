@@ -2,7 +2,7 @@ organization in ThisBuild := "com.meetpraveen"
 version in ThisBuild := "1.0-SNAPSHOT"
 
 // the Scala version that will be used for cross-compiled libraries
-scalaVersion in ThisBuild := "2.13.0"
+scalaVersion in ThisBuild := "2.12.6"
 
 val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.3" % "provided"
 val scalaTest = "org.scalatest" %% "scalatest" % "3.0.8" % Test
@@ -27,9 +27,7 @@ lazy val `hello-impl` = (project in file("hello-impl"))
       macwire,
       scalaTest,
       "io.kamon" %% "kamon-bundle" % "2.0.5",
-      "io.kamon" %% "kamon-prometheus" % "2.0.1",
-      "io.kamon" %% "kamon-akka" % "2.0.2",
-      "io.kamon" %% "kamon-akka-http" % "2.0.2"
+      "io.kamon" %% "kamon-prometheus" % "2.0.1"
     ),
     dockerExposedPorts := Seq(9000, 9095),
     javaAgents += "org.aspectj" % "aspectjweaver" % "1.9.5",
